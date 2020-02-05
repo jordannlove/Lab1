@@ -11,7 +11,7 @@
 LinkedList::LinkedList()
 {
   std::cout << "LinkedList constructor reached\n";
-  //head = nullptr;
+  head = nullptr;
   itemCount = 0;
 }
 
@@ -33,4 +33,26 @@ bool LinkedList::add(int entry)
   head = newNodePtr;
   itemCount++;
   return true;
+}
+
+
+bool LinkedList::isEmpty()
+{
+  if(head == nullptr)
+  {
+    std::cout << "\nThe list is empty.";
+    return true;
+  }
+  else
+  {
+    std::cout << "\nThe list is not empty.";
+    return false;
+  }
+}
+
+
+int LinkedList::length()
+{
+  std::cout << "\nThe length of the list is " << itemCount << '.';
+  return itemCount;
 }

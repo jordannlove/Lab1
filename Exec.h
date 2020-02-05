@@ -15,7 +15,7 @@ public:
 private:
   std::string m_textFile;
   bool exit = false;
-  int userSelection = 0;
+  int menu = 0;
 };
 
 #endif

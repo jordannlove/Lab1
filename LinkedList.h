@@ -14,6 +14,8 @@ public:
   LinkedList();
   virtual ~LinkedList();
   bool add(int entry);
+  bool isEmpty();
+  int length();
 
 private:
   Node* head;
