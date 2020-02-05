@@ -10,11 +10,12 @@ int main(int argc, char* argv[])
 {
   if(argc < 2)
   {
-    std::cout << "Invalid parameters - must type data file name after './Lab1'.\n";
+    std::cout << "Invalid parameters - must type data file name after './Lab2'.\n";
   }
   else
   {
-    Exec(argv[1]); //create Exec object for program run
+    std::string textFile = argv[1];
+    Exec run(textFile); //create Exec object called run
   }
   return(0);
 }

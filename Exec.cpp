@@ -5,7 +5,8 @@
 #include <fstream>
 
 #include"Exec.h"
-// #include "LinkedList.h"
+#include "LinkedList.h"
+
 
 Exec::Exec(std::string m_textFile)
 {
@@ -17,14 +18,13 @@ Exec::Exec(std::string m_textFile)
   }
   else
   {
-    std::cout << "File opened successfully.\n";
-    int number;
-    // LinkedList list;
+    std::cout << "File opened.\n";
+    int datum;
+    LinkedList list;
 
-    //fix me - duplicate numbers
-    while(inFile >> number) //while not the end of file
+    while(inFile >> datum) //while not the end of file
     {
-      list.add(number);
+      list.add(datum);
     }
   }
 }

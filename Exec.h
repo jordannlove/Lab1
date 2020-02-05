@@ -13,8 +13,9 @@ public:
   Exec(std::string m_textFile);
 
 private:
-  // std::string m_textFile;
+  std::string m_textFile;
   bool exit = false;
+  int userSelection = 0;
 };
 
 #endif
