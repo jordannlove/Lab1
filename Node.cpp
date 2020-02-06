@@ -43,13 +43,3 @@ Node* Node::getNext() const
 {
   return next;
 }
-
-void Node::setPrev(Node* prevPtr)
-{
-  previous = prevPtr;
-}
-
-Node* Node::getPrev() const
-{
-  return previous;
-}

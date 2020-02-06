@@ -59,19 +59,50 @@ Exec::Exec(std::string m_textFile)
       }
       else if(menu == 3)
       {
-        //just use add
+        int entry;
+        std::cout << "\nPlease enter the integer you'd like to insert: ";
+        std::cin >> entry;
+        if(list.add(entry) == true)
+        {
+          std::cout << "\nEntry was inserted.";
+        }
+        else
+        {
+          std::cout << "\nEntry was not inserted.";
+        }
       }
-      else if(menu == 4)
+      else if(menu == 4) //!
       {
-
+        int entry;
+        std::cout << "\nPlease enter the integer you'd like to delete: ";
+        std::cin >> entry;
+        list.deleteElement(entry);
+        if(list.deleteElement(entry) == true)
+        {
+          std::cout << "\nElement was deleted.";
+        }
+        else
+        {
+          std::cout << "\nElement was not deleted.";
+        }
       }
       else if(menu == 5)
       {
-
+        //haha nope
       }
       else if(menu == 6)
       {
-
+        int entry;
+        std::cout << "\nPlease enter the integer you'd like to find: ";
+        std::cin >> entry;
+        if(list.find(entry) == true)
+        {
+          std::cout << "\nEntry was found.";
+        }
+        else
+        {
+          std::cout << "\nEntry was not found.";
+        }
       }
       else if(menu == 7)
       {

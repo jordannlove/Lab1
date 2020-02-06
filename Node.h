@@ -10,7 +10,6 @@ class Node
 {
 private:
   int value;
-  Node* previous;
   Node* next;
 
 public:
@@ -21,8 +20,6 @@ public:
   int getValue() const;
   void setNext(Node* nextPtr);
   Node* getNext() const;
-  void setPrev(Node* prevPtr);
-  Node* getPrev() const;
 };
 
 #endif
