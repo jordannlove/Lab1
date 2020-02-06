@@ -53,10 +53,12 @@ Exec::Exec(std::string m_textFile)
       {
         list.isEmpty();
       }
+
       else if(menu == 2)
       {
         list.length();
       }
+
       else if(menu == 3)
       {
         int entry;
@@ -71,6 +73,7 @@ Exec::Exec(std::string m_textFile)
           std::cout << "\nEntry was not inserted.";
         }
       }
+
       else if(menu == 4) //!
       {
         int entry;
@@ -86,10 +89,12 @@ Exec::Exec(std::string m_textFile)
           std::cout << "\nElement was not deleted.";
         }
       }
+
       else if(menu == 5)
       {
-        //haha nope
+        list.deleteDuplicates();
       }
+
       else if(menu == 6)
       {
         int entry;
@@ -104,26 +109,46 @@ Exec::Exec(std::string m_textFile)
           std::cout << "\nEntry was not found.";
         }
       }
+
       else if(menu == 7)
       {
-
+        int entry;
+        std::cout << "\nPlease enter the integer you'd like to find the successor of: ";
+        std::cin >> entry;
+        list.find(entry);
+        if(list.find(entry) == true)
+        {
+          std::cout << "\nThe successor is " << list.findNext(entry) << '.';
+        }
+        else
+        {
+          std::cout << "\nInteger was not found.";
+        }
       }
+
       else if(menu == 8)
       {
-
+        list.print();
       }
+
       else if(menu == 9)
       {
-
+        //rip
       }
+
       else if(menu == 10)
       {
-
+        int entry;
+        std::cout << "\nPlease enter the position you'd like to print: ";
+        std::cin >> entry;
+        std::cout << "\nThe entry at that position is " << list.printAtX(entry);
       }
+
       else if(menu == 11)
       {
         exit = true;
       }
+
       else
       {
         std::cout << "\nInvalid menu choice; please enter an integer 1-11.";

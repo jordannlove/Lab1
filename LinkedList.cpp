@@ -63,12 +63,30 @@ bool LinkedList::deleteElement(int entry)
   }
 }
 
+void LinkedList::deleteDuplicates() //!
+{
+  Node* temp = head;
+  Node* temp2 = nullptr;
+  Node* temp3 = nullptr;
+  while(temp != nullptr)
+  {
+    temp2 = temp;
+    while(temp2->getNext() != nullptr)
+    {
+      if(temp2->getNext()->getValue() == temp->getValue())
+      {
+        temp3 = temp2->getNext();
+        Node* temp4 = temp2->getNext()->getNext();
+        temp2->setNext(temp4);
+        delete temp3;
+      }
+    }
+  }
+}
+
 
 bool LinkedList::find(int entry)
 {
-  std::cout << "LinkedList find() reached.\n";
-  std::cout << entry << '\n';
-
   if(head == nullptr)
   {
     return false;
@@ -90,14 +108,64 @@ bool LinkedList::find(int entry)
     }
     return false;
   }
+}
 
 
-  Node* newNodePtr = new Node();
-  newNodePtr->setValue(entry);
-  newNodePtr->setNext(head);
-  head = newNodePtr;
-  itemCount++;
-  return true;
+int LinkedList::findNext(int entry)
+{
+  if(head->getValue() == entry)
+  {
+    return head->getNext()->getValue();
+  }
+  Node* current = head;
+  while(current->getNext() != nullptr)
+  {
+    if(current->getNext()->getValue() == entry)
+    {
+      return current->getNext()->getNext()->getValue();
+    }
+    current = current->getNext();
+  }
+}
+
+
+void LinkedList::print()
+{
+  if(head == nullptr)
+  {
+    std::cout << "\nThe list is empty.";
+  }
+  else
+  {
+    std::cout << "\nList: " << head->getValue() << ' ';
+    Node* current = head;
+    while(current->getNext() != nullptr)
+    {
+      std::cout << current->getNext()->getValue() << ' ';
+      current = current->getNext();
+    }
+  }
+}
+
+
+int LinkedList::printAtX(int entry)
+{
+  if(head != nullptr)
+  {
+    Node* current = head;
+    for(int i = 1; i < entry; i++)
+    {
+      if(current->getNext() != nullptr)
+      {
+        current = current->getNext();
+      }
+      else
+      {
+        return -1;
+      }
+    }
+    return current->getValue();
+  }
 }
 
 

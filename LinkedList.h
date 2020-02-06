@@ -15,7 +15,11 @@ public:
   virtual ~LinkedList();
   bool add(int entry);
   bool deleteElement(int entry);
+  void deleteDuplicates();
   bool find(int entry);
+  int findNext(int entry);
+  void print();
+  int printAtX(int entry);
   bool isEmpty();
   int length();
 
